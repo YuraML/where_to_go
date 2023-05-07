@@ -15,7 +15,10 @@ class Place(models.Model):
 class Image(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE, related_name='images', null=True)
     img = models.ImageField()
-    number = models.PositiveIntegerField(default=1)
+    number = models.PositiveIntegerField(db_index=True)
+
+    class Meta:
+        ordering = ['number']
 
     def __str__(self):
-        return f"{self.number} {self.place.title if self.place else 'Image'}"
+        return f"{self.id} {self.place}"
