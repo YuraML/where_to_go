@@ -3,7 +3,6 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
-
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -56,14 +55,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'where_to_go.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': os.environ['ENGINE'],
         'NAME': BASE_DIR / os.environ['NAME'],
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -80,7 +77,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -88,8 +84,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-
 
 STATIC_URL = os.environ['STATIC_URL']
 
