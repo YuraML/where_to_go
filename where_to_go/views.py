@@ -13,12 +13,15 @@ def show_main_page(request):
     for place in places:
         feature = {
             "type": "Feature",
-            "geometry": {"type": "Point", "coordinates": [place.lng, place.lat]},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [place.lng, place.lat]
+            },
             "properties": {
                 "title": place.title,
                 "placeId": place.id,
-                "detailsUrl": reverse("place_specs", args=(place.id, )),
-            },
+                "detailsUrl": reverse("place_specs", args=(place.id,))
+            }
         }
         features.append(feature)
 
