@@ -25,15 +25,16 @@ class Command(BaseCommand):
         response = requests.get(url)
         response.raise_for_status()
         place_meta = response.json()
-        img_links = place_meta['imgs']
+        img_links = place_meta.get('imgs', [])
 
         place, created = Place.objects.get_or_create(
             title=place_meta['title'],
             defaults={
-                'description_short': place_meta['description_short'],
-                'description_long': place_meta['description_long'],
+                'description_short': place_meta.get('description_short', ''),
+                'description_long': place_meta.get('description_long', ''),
                 'lng': place_meta['coordinates']['lng'],
                 'lat': place_meta['coordinates']['lat'],
+                'img_links': img_links,
             }
         )
 
