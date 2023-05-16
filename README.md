@@ -10,17 +10,21 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 
-Для работы программы необходим файл `.env` с необходимыми данными, заполненный следующим образом:
+Для работы программы необходим файл `.env` с необходимыми данными, заполненный подобным образом:
 
 ```
-SECRET_KEY=
-DEBUG=
-ALLOWED_HOSTS=
-ENGINE=
-NAME=
-STATIC_URL=
-MEDIA_URL=
-MEDIA_ROOT=
+SECRET_KEY=your_secret_key
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+ENGINE=django.db.backends.postgresql
+NAME=your_database_name
+USER=your_database_username
+PASSWORD=your_database_password
+HOST=localhost
+PORT=5432
+STATIC_URL=/static/
+MEDIA_URL=/media/
+MEDIA_ROOT=/path/to/media/directory
 ```
 
 ### Запуск
