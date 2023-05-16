@@ -32,7 +32,6 @@ MEDIA_ROOT=/path/to/media/directory
 Для запуска введите в командную строку следующие команды по очереди:
 
 ```console
-python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
 ```
