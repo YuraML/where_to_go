@@ -34,7 +34,6 @@ class Command(BaseCommand):
                 'description_long': place_meta.get('description_long', ''),
                 'lng': place_meta['coordinates']['lng'],
                 'lat': place_meta['coordinates']['lat'],
-                'img_links': img_links,
             }
         )
 

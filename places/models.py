@@ -14,12 +14,14 @@ class Place(models.Model):
 
 
 class Image(models.Model):
-    place = models.ForeignKey(Place,
-                              on_delete=models.CASCADE,
-                              related_name='images',
-                              null=True,
-                              blank=True,
-                              verbose_name='Название места', )
+    place = models.ForeignKey(
+        Place,
+        on_delete=models.CASCADE,
+        related_name='images',
+        null=True,
+        blank=True,
+        verbose_name='Название места',
+    )
     img = models.ImageField('Изображение')
     number = models.PositiveIntegerField('Позиция', db_index=True)
 
